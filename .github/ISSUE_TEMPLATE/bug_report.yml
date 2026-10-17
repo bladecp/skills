@@ -1,0 +1,78 @@
+name: Bug report
+description: Report a reproducible problem with the BladeCP Agent Skills or their plugin manifests.
+title: "Bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the BladeCP Agent Skills. Remove API keys, backup contents, customer data, domains you do not want to share and other sensitive information before submitting. Report vulnerabilities privately, as described in SECURITY.md.
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Agent
+      description: Where did the problem happen?
+      options:
+        - Claude Code
+        - Codex
+        - Cursor
+        - Antigravity CLI
+        - OpenCode
+        - Another agent
+    validations:
+      required: true
+  - type: input
+    id: agent-version
+    attributes:
+      label: Agent version
+      description: For example, the output of `claude --version`, `codex --version` or `agy --version`.
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: BladeCP Agent Skills version
+      description: The version in plugin.json or in the release you installed.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Installation or plugin manifest
+        - Skill behavior
+        - BladeCP MCP connection
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and its impact.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reliable sequence that reproduces the issue, including the prompt you used when it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Explain what you expected to happen instead.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Relevant output
+      description: Add sanitized error messages or command output. Never include an API key.
+      render: text
+    validations:
+      required: false

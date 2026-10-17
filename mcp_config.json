@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "bladecp": {
+      "serverUrl": "https://mcp.bladecp.com/mcp"
+    }
+  }
+}
