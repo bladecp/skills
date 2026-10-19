@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="2283" viewBox="0 0 600 2283" role="img" aria-labelledby="title desc">
 <title id="title">Como funcionam as BladeCP Agent Skills</title>
-<desc id="desc">O seu agente de IA carrega as BladeCP Agent Skills. A skill bladecp escolhe a ferramenta certa e aponta a documentação, a bladecp-migrate executa a BladeCP CLI para migrar um backup do cPanel até a prévia e a bladecp-servers lê a conta pelo BladeCP MCP. O MCP em mcp.bladecp.com/mcp oferece as ferramentas de documentação sem chave e oito ferramentas da conta, somente leitura, com a chave da BLADECP_API_KEY, chamando a Customer API em api.bladecp.com. Todas as skills leem o BladeCP Developers em developers.bladecp.com. Aprovar, cancelar e repetir uma migração continuam com você.</desc>
+<desc id="desc">O seu agente de IA carrega as BladeCP Agent Skills. A skill bladecp escolhe a ferramenta certa e aponta a documentação, a bladecp-migrate executa a BladeCP CLI para migrar um backup do cPanel até a prévia e a bladecp-servers lê a conta pelo BladeCP MCP. O MCP em mcp.bladecp.com/mcp oferece as ferramentas de documentação e as públicas sem chave e oito ferramentas da conta, somente leitura, com o login da BladeCP ou a chave da BLADECP_API_KEY, chamando a Customer API em api.bladecp.com. Todas as skills leem o BladeCP Developers em developers.bladecp.com. Aprovar, cancelar e repetir uma migração continuam com você.</desc>
 <defs>
 <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f0f2b"/><stop offset="1" stop-color="#0a0a1d"/></linearGradient>
 <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
@@ -64,7 +64,7 @@
 <path d="M24 2066H576" stroke="#fff" stroke-opacity=".08"/>
 <text x="24" y="2100" font-size="16" fill="#8b8fb8">O MCP só lê. O envio passa pela BladeCP CLI;</text>
 <text x="24" y="2125" font-size="16" fill="#8b8fb8">aprovar, cancelar e repetir continuam com</text>
-<text x="24" y="2150" font-size="16" fill="#8b8fb8">você. Sem chave, o MCP responde em modo</text>
-<text x="24" y="2175" font-size="16" fill="#8b8fb8">só documentação.</text>
+<text x="24" y="2150" font-size="16" fill="#8b8fb8">você. Sem chave, as ferramentas da conta</text>
+<text x="24" y="2175" font-size="16" fill="#8b8fb8">pedem o login da BladeCP.</text>
 </g>
 </svg>

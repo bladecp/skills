@@ -7,7 +7,7 @@
     {
       "name": "bladecp",
       "source": "./",
-      "description": "BladeCP skills and MCP server for AI agents: migrate cPanel sites with the BladeCP CLI, inspect servers and migrations, and read the BladeCP Developers documentation."
+      "description": "BladeCP skills and MCP server for AI agents: migrate cPanel sites, manage servers, domains, apps and WordPress with the BladeCP CLI, operate your customers' services as a BladeCP partner, and read the BladeCP Developers documentation."
     }
   ]
 }

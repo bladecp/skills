@@ -1,8 +1,8 @@
 {
   "name": "bladecp",
-  "description": "Official BladeCP plugin for AI agents: skills for cPanel migrations and servers, plus the BladeCP MCP server for documentation and read-only account data.",
+  "description": "Official BladeCP plugin for AI agents: skills for cPanel migrations, servers and partner operations with the BladeCP CLI, plus the BladeCP MCP server for documentation and read-only account data.",
   "metadata": {
-    "description": "Official BladeCP plugin for AI agents: skills for cPanel migrations and servers, plus the BladeCP MCP server for documentation and read-only account data."
+    "description": "Official BladeCP plugin for AI agents: skills for cPanel migrations, servers and partner operations with the BladeCP CLI, plus the BladeCP MCP server for documentation and read-only account data."
   },
   "owner": {
     "name": "BladeCP",
@@ -12,7 +12,7 @@
     {
       "name": "bladecp",
       "source": "./",
-      "description": "BladeCP skills and MCP server for AI agents: migrate cPanel sites with the BladeCP CLI, inspect servers and migrations, and read the BladeCP Developers documentation.",
+      "description": "BladeCP skills and MCP server for AI agents: migrate cPanel sites, manage servers, domains, apps and WordPress with the BladeCP CLI, operate your customers' services as a BladeCP partner, and read the BladeCP Developers documentation.",
       "author": {
         "name": "BladeCP",
         "url": "https://bladecp.com"
@@ -26,6 +26,7 @@
         "cpanel",
         "wordpress",
         "servers",
+        "partner",
         "mcp"
       ]
     }

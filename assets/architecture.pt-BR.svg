@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1520" height="1300" viewBox="0 0 1520 1300" role="img" aria-labelledby="title desc">
 <title id="title">Como funcionam as BladeCP Agent Skills</title>
-<desc id="desc">O seu agente de IA carrega as BladeCP Agent Skills. A skill bladecp escolhe a ferramenta certa e aponta a documentação, a bladecp-migrate executa a BladeCP CLI para migrar um backup do cPanel até a prévia e a bladecp-servers lê a conta pelo BladeCP MCP. O MCP em mcp.bladecp.com/mcp oferece as ferramentas de documentação sem chave e oito ferramentas da conta, somente leitura, com a chave da BLADECP_API_KEY, chamando a Customer API em api.bladecp.com. Todas as skills leem o BladeCP Developers em developers.bladecp.com. Aprovar, cancelar e repetir uma migração continuam com você.</desc>
+<desc id="desc">O seu agente de IA carrega as BladeCP Agent Skills. A skill bladecp escolhe a ferramenta certa e aponta a documentação, a bladecp-migrate executa a BladeCP CLI para migrar um backup do cPanel até a prévia e a bladecp-servers lê a conta pelo BladeCP MCP. O MCP em mcp.bladecp.com/mcp oferece as ferramentas de documentação e as públicas sem chave e oito ferramentas da conta, somente leitura, com o login da BladeCP ou a chave da BLADECP_API_KEY, chamando a Customer API em api.bladecp.com. Todas as skills leem o BladeCP Developers em developers.bladecp.com. Aprovar, cancelar e repetir uma migração continuam com você.</desc>
 <defs>
 <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f0f2b"/><stop offset="1" stop-color="#0a0a1d"/></linearGradient>
 <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
@@ -84,7 +84,7 @@
 <text x="363.69" y="1074" font-size="17" fill="#a5a6c9">Documentação, sem chave</text>
 <path d="M56 1106H1464" stroke="#fff" stroke-opacity=".08"/>
 <text x="56" y="1146" font-size="18" fill="#8b8fb8">O MCP só lê. O envio passa pela BladeCP CLI; aprovar, cancelar e repetir continuam com você.</text>
-<text x="56" y="1180" font-size="18" fill="#8b8fb8">Sem a BLADECP_API_KEY, o MCP responde em modo só documentação.</text>
+<text x="56" y="1180" font-size="18" fill="#8b8fb8">Sem a BLADECP_API_KEY, as ferramentas da conta pedem o login da BladeCP.</text>
 <path d="M356 396H440" fill="none" stroke="#818cf8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ai)"/>
 <path d="M1080 396H1164" fill="none" stroke="#818cf8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ai)"/>
 <path d="M206 503V470" fill="none" stroke="#818cf8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ai)"/>

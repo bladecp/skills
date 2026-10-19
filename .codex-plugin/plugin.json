@@ -1,8 +1,8 @@
 {
   "name": "bladecp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
-  "description": "BladeCP skills and MCP server for AI agents: migrate cPanel sites with the BladeCP CLI, inspect servers and migrations, and read the BladeCP Developers documentation.",
+  "description": "BladeCP skills and MCP server for AI agents: migrate cPanel sites, manage servers, domains, apps and WordPress with the BladeCP CLI, operate your customers' services as a BladeCP partner, and read the BladeCP Developers documentation.",
   "author": {
     "name": "BladeCP",
     "url": "https://bladecp.com"
@@ -17,6 +17,9 @@
     "wordpress",
     "fast-deploy",
     "servers",
+    "partner",
+    "whmcs",
+    "webhooks",
     "cli",
     "mcp"
   ],
@@ -24,8 +27,8 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "BladeCP",
-    "shortDescription": "BladeCP migrations and servers for agents",
-    "longDescription": "Migrate a cPanel full backup to BladeCP with the BladeCP CLI and follow it up to the private preview, inspect servers, usage, domains and migrations through the read-only BladeCP MCP, and read the BladeCP Developers documentation without leaving your agent.",
+    "shortDescription": "BladeCP migrations, servers and partner tools",
+    "longDescription": "Migrate a cPanel full backup to BladeCP with the BladeCP CLI and follow it up to the private preview, inspect servers, usage, domains and migrations through the read-only BladeCP MCP, manage domains, apps and WordPress updates, operate your customers' servers, BladeCP Vibe accounts, marketplace, webhooks and migrations as a BladeCP partner, reach any Customer API route with bladecp api, and read the BladeCP Developers documentation without leaving your agent. Changes run only when you ask for them.",
     "developerName": "BladeCP",
     "category": "Developer Tools",
     "capabilities": [

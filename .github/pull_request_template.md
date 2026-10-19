@@ -16,4 +16,4 @@ Confirm that every command, flag, MCP tool and documentation page mentioned in t
 
 ## Security and privacy
 
-Confirm that the change does not expose credentials, customer data or other sensitive information, and that the skills still never ask for a key in the chat or approve, cancel or retry a migration without an explicit instruction.
+Confirm that the change does not expose credentials, customer data or other sensitive information, and that the skills still never ask for a key in the chat or approve, cancel or retry a migration, or change a server or a partner service, without an explicit instruction.

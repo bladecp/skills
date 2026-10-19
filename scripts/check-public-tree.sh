@@ -29,8 +29,8 @@ NAME = 'bladecp'
 HOMEPAGE = 'https://developers.bladecp.com'
 REPOSITORY = 'https://github.com/bladecp/skills'
 MCP_URL = 'https://mcp.bladecp.com/mcp'
-SKILLS = ['bladecp', 'bladecp-migrate', 'bladecp-servers']
-BLADECP_HOSTS = {'bladecp.com', 'hub.bladecp.com', 'developers.bladecp.com', 'mcp.bladecp.com', 'api.bladecp.com'}
+SKILLS = ['bladecp', 'bladecp-migrate', 'bladecp-partner', 'bladecp-servers']
+BLADECP_HOSTS = {'bladecp.com', 'hub.bladecp.com', 'developers.bladecp.com', 'mcp.bladecp.com', 'api.bladecp.com', 'secure.bladecp.com'}
 TEXT_EXT = {'.md', '.json', '.yml', '.yaml', '.sh', '.svg', '.txt', ''}
 BINARY_EXT = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico'}
 # Built from parts so this file does not trip its own check.

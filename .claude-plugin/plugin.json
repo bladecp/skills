@@ -1,7 +1,7 @@
 {
   "name": "bladecp",
-  "description": "BladeCP skills and MCP server for AI agents: migrate cPanel sites with the BladeCP CLI, inspect servers and migrations, and read the BladeCP Developers documentation.",
-  "version": "0.1.0",
+  "description": "BladeCP skills and MCP server for AI agents: migrate cPanel sites, manage servers, domains, apps and WordPress with the BladeCP CLI, operate your customers' services as a BladeCP partner, and read the BladeCP Developers documentation.",
+  "version": "0.2.0",
   "license": "MIT",
   "mcpServers": "./.mcp.json",
   "author": {
@@ -18,6 +18,9 @@
     "wordpress",
     "fast-deploy",
     "servers",
+    "partner",
+    "whmcs",
+    "webhooks",
     "cli",
     "mcp"
   ]

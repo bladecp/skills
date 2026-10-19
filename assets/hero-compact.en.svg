@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="694" viewBox="0 0 720 694" role="img" aria-labelledby="title desc">
 <title id="title">BladeCP Agent Skills</title>
-<desc id="desc">Official BladeCP Agent Skills. Teach your AI agent to run BladeCP with three skills and the read-only BladeCP MCP, for Claude Code, Codex, Cursor, Antigravity and OpenCode. Approvals stay with you.</desc>
+<desc id="desc">Official BladeCP Agent Skills. Teach your AI agent to run BladeCP with four skills and the read-only BladeCP MCP, for Claude Code, Codex, Cursor, Antigravity and OpenCode. Approvals stay with you.</desc>
 <style>.sweep-core{animation:bcp-core 12s cubic-bezier(.45,0,.55,1) -6s infinite alternate}.sweep-glow{animation:bcp-glow 12s cubic-bezier(.45,0,.55,1) -6s infinite alternate}.atmo{animation:bcp-atmo 9s ease-in-out infinite}@keyframes bcp-core{from{stroke-dashoffset:-134.9px}to{stroke-dashoffset:-674.97px}}@keyframes bcp-glow{from{stroke-dashoffset:-91.9px}to{stroke-dashoffset:-631.97px}}@keyframes bcp-atmo{50%{opacity:.78}}@media (prefers-reduced-motion:reduce){.sweep-core,.sweep-glow,.atmo{animation:none}}</style>
 <defs>
 <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0b1a"/><stop offset="1" stop-color="#05050c"/></linearGradient>
@@ -40,7 +40,7 @@
 <text x="360" y="152" font-size="17" font-weight="600" fill="#a5b4fc" text-anchor="middle" letter-spacing="3.4">OFFICIAL AGENT SKILLS</text>
 <text x="360" y="224" font-size="46" font-weight="700" fill="#f5f5ff" text-anchor="middle" letter-spacing="-0.6">Teach your AI agent</text>
 <text x="360" y="282" font-size="46" font-weight="700" fill="#f5f5ff" text-anchor="middle" letter-spacing="-0.6">to run BladeCP.</text>
-<text x="360" y="336" font-size="24" fill="#a5a6c9" text-anchor="middle">Three skills and the BladeCP MCP.</text>
+<text x="360" y="336" font-size="24" fill="#a5a6c9" text-anchor="middle">Four skills and the BladeCP MCP.</text>
 <text x="360" y="370" font-size="24" fill="#a5a6c9" text-anchor="middle">You keep the approvals.</text>
 <rect x="40" y="408" width="204" height="46" rx="23" fill="#fff" fill-opacity=".045" stroke="#a5b4fc" stroke-opacity=".24"/><text x="142" y="437.3" font-size="18" font-weight="600" fill="#e0e7ff" text-anchor="middle">Claude Code</text>
 <rect x="258" y="408" width="204" height="46" rx="23" fill="#fff" fill-opacity=".045" stroke="#a5b4fc" stroke-opacity=".24"/><text x="360" y="437.3" font-size="18" font-weight="600" fill="#e0e7ff" text-anchor="middle">Codex</text>

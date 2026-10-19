@@ -5,13 +5,13 @@ This guide installs the BladeCP Agent Skills and connects the BladeCP MCP server
 | Agent | Skills | BladeCP MCP | Account tools with your key |
 | --- | --- | --- | --- |
 | Claude Code | Plugin | Plugin | Read from `BLADECP_API_KEY` by the plugin |
-| Codex | Plugin | Plugin, documentation only | An entry in `~/.codex/config.toml` |
-| Cursor | Plugin | Plugin, documentation only | An entry in `~/.cursor/mcp.json` |
-| Antigravity CLI | Plugin | Plugin, documentation only | A server added with `agy mcp add` |
+| Codex | Plugin | Plugin, without a key | An entry in `~/.codex/config.toml` |
+| Cursor | Plugin | Plugin, without a key | An entry in `~/.cursor/mcp.json` |
+| Antigravity CLI | Plugin | Plugin, without a key | A server added with `agy mcp add` |
 | OpenCode | Skills folder | An entry in `opencode.json` | Read from `BLADECP_API_KEY` by that entry |
 | Other agents | `skills` CLI | Your agent's MCP settings | Depends on the agent |
 
-Without a key, the BladeCP MCP server answers in documentation-only mode with `search_docs`, `get_doc_page` and `list_doc_pages`. With a key, it also offers the read-only account tools. To create the key and expose it as `BLADECP_API_KEY`, follow [API key](../README.md#api-key) in the README.
+Without a key, the BladeCP MCP server lists every tool. The documentation tools (`search_docs`, `get_doc_page` and `list_doc_pages`), `recommend_plan` and `explain_migration` work, and an account tool answers with a sign-in request: agents that support MCP sign-in, such as Claude Code, open the BladeCP sign-in in your browser, where you allow read-only access (`bladecp:read`). You can disconnect it later in your BladeCP account, under [Connected apps](https://secure.bladecp.com/account/applications). With a key, the read-only account tools work right away. To create the key and expose it as `BLADECP_API_KEY`, follow [API key](../README.md#api-key) in the README.
 
 The `bladecp-migrate` skill runs the BladeCP CLI with `npx @bladecp/cli`, so the machine needs Node.js 20 or later. The CLI signs in on its own with `bladecp login`.
 
@@ -34,7 +34,7 @@ Inside a session, the equivalent is:
 
 In a session, `/plugin install` opens the plugin details so you can choose the scope. To pin a release, add the tag to the marketplace source, for example `claude plugin marketplace add bladecp/skills#v0.1.0`.
 
-**Key.** The plugin's MCP configuration reads `BLADECP_API_KEY` from the environment. Set the variable before you start Claude Code; after changing it, start a new session.
+**Key.** The plugin's MCP configuration reads `BLADECP_API_KEY` from the environment. Set the variable before you start Claude Code; after changing it, start a new session. Without the variable, Claude Code opens the BladeCP sign-in in your browser the first time the agent calls an account tool.
 
 **Check.** `claude plugin list` shows `bladecp@bladecp` as enabled, and `/mcp` lists `bladecp` as a plugin server.
 
@@ -55,7 +55,7 @@ codex plugin add bladecp@bladecp
 
 You can also open the plugin browser with `/plugins` in the Codex CLI. Start a new session after installing. To pin a release, use `codex plugin marketplace add bladecp/skills --ref v0.1.0`.
 
-**Key.** The plugin's MCP server runs in documentation-only mode, because a plugin cannot pass a key from an environment variable. To enable the account tools, add this entry to `~/.codex/config.toml`:
+**Key.** The plugin's MCP server connects without a key, because a plugin cannot pass a key from an environment variable: the documentation and public tools work, and the account tools ask for the BladeCP sign-in where Codex supports MCP sign-in. To use the account tools with your key, add this entry to `~/.codex/config.toml`:
 
 ```toml
 [mcp_servers.bladecp]
@@ -63,7 +63,7 @@ url = "https://mcp.bladecp.com/mcp"
 env_http_headers = { "X-API-KEY" = "BLADECP_API_KEY" }
 ```
 
-The same result from the command line, with the key sent as a bearer token: `codex mcp add bladecp --url https://mcp.bladecp.com/mcp --bearer-token-env-var BLADECP_API_KEY`. With this entry, Codex lists a single `bladecp` server that sends the key. If the variable is empty or missing, Codex does not send the header and the server stays in documentation-only mode.
+The same result from the command line, with the key sent as a bearer token: `codex mcp add bladecp --url https://mcp.bladecp.com/mcp --bearer-token-env-var BLADECP_API_KEY`. With this entry, Codex lists a single `bladecp` server that sends the key. If the variable is empty or missing, Codex does not send the header and the server works as it does without a key.
 
 **Check.** `codex mcp list` shows `bladecp` at `https://mcp.bladecp.com/mcp`, and `/mcp` lists its tools in a session.
 
@@ -79,7 +79,7 @@ In Cursor, open **Customize**, choose **From GitHub Repository**, enter `https:/
 
 To try it without importing, copy the repository, or the `bladecp` folder of a release archive, to `~/.cursor/plugins/local/bladecp` and run **Developer: Reload Window**.
 
-**Key.** The plugin's MCP server runs in documentation-only mode. To enable the account tools, add this entry to `~/.cursor/mcp.json` without removing the servers already there:
+**Key.** The plugin's MCP server connects without a key: the documentation and public tools work, and the account tools ask for the BladeCP sign-in where Cursor supports it. To use the account tools with your key, add this entry to `~/.cursor/mcp.json` without removing the servers already there:
 
 ```json
 {
@@ -96,7 +96,7 @@ To try it without importing, copy the repository, or the `bladecp` folder of a r
 
 The variable must be visible to the Cursor process. If the account tools do not show up, open Cursor from a terminal where the variable is exported. If the plugin's `bladecp` server also shows up, turn it off in **Customize** to avoid duplicate documentation tools.
 
-**Check.** **Customize** lists the `bladecp` plugin with three skills, and the MCP list shows `bladecp`.
+**Check.** **Customize** lists the `bladecp` plugin with four skills, and the MCP list shows `bladecp`.
 
 **Update and remove.** Manage the plugin in **Customize**. For a local copy, replace the folder and reload the window.
 
@@ -110,9 +110,9 @@ Install the plugin from the repository:
 agy plugin install https://github.com/bladecp/skills
 ```
 
-Inside a session, `/plugin` opens the plugin manager. The plugin installs the three skills and the BladeCP MCP server in documentation-only mode, from `mcp_config.json`. In the Antigravity app and IDE, you can also copy the plugin folder to `~/.gemini/config/plugins/bladecp`.
+Inside a session, `/plugin` opens the plugin manager. The plugin installs the four skills and the BladeCP MCP server without a key, from `mcp_config.json`: the documentation and public tools work, and the account tools ask for the BladeCP sign-in where Antigravity supports it. In the Antigravity app and IDE, you can also copy the plugin folder to `~/.gemini/config/plugins/bladecp`.
 
-**Key.** Antigravity does not document environment variable expansion in MCP headers. To enable the account tools, run this in your own terminal, not through an agent:
+**Key.** Antigravity does not document environment variable expansion in MCP headers. To use the account tools with your key, run this in your own terminal, not through an agent:
 
 ```sh
 agy mcp add --header "X-API-KEY: $BLADECP_API_KEY" bladecp-account https://mcp.bladecp.com/mcp
@@ -120,7 +120,7 @@ agy mcp add --header "X-API-KEY: $BLADECP_API_KEY" bladecp-account https://mcp.b
 
 Your shell expands the variable when the command runs, so the key is stored as a value in `~/.gemini/config/mcp_config.json`. Keep that file private, for example with `chmod 600 ~/.gemini/config/mcp_config.json`, and run the command again after you rotate the key. The documentation tools then appear twice, once per server.
 
-**Check.** `agy plugin list` shows `bladecp` with 3 skills and 1 MCP server, and `agy mcp list` shows `bladecp-account` when you added it.
+**Check.** `agy plugin list` shows `bladecp` with 4 skills and 1 MCP server, and `agy mcp list` shows `bladecp-account` when you added it.
 
 **Update.** Run the install command again.
 
@@ -130,7 +130,7 @@ References: [Plugins](https://antigravity.google/docs/plugins), [Agent skills](h
 
 ## OpenCode
 
-OpenCode loads skills from folders. Copy the three skills to your global skills folder:
+OpenCode loads skills from folders. Copy the four skills to your global skills folder:
 
 ```sh
 git clone --depth 1 https://github.com/bladecp/skills.git bladecp-skills
@@ -158,9 +158,9 @@ For a single project, copy them to `.opencode/skills/` in that project instead. 
 }
 ```
 
-If the variable is not set, OpenCode sends an empty value and the server stays in documentation-only mode.
+With `"oauth": false`, OpenCode uses the key and does not open the BladeCP sign-in. If the variable is not set, OpenCode sends an empty value, and only the tools that need no sign-in work.
 
-**Check.** `opencode debug skill` lists `bladecp`, `bladecp-migrate` and `bladecp-servers`, and `opencode mcp list` shows `bladecp`.
+**Check.** `opencode debug skill` lists `bladecp`, `bladecp-migrate`, `bladecp-partner` and `bladecp-servers`, and `opencode mcp list` shows `bladecp`.
 
 **Update.** Pull the repository again and repeat the copy, or run `npx -y skills update -g`.
 
@@ -174,7 +174,7 @@ Install only the skills with the [`skills`](https://skills.sh) CLI, which knows 
 npx -y skills add bladecp/skills --skill '*'
 ```
 
-Then add the MCP server in your agent's settings: address `https://mcp.bladecp.com/mcp` (streamable HTTP), with the `X-API-KEY` header read from an environment variable. If your agent only supports bearer tokens, the server also accepts `Authorization: Bearer <key>`. Never write the key itself into a versioned file.
+Then add the MCP server in your agent's settings: address `https://mcp.bladecp.com/mcp` (streamable HTTP), with the `X-API-KEY` header read from an environment variable. If your agent only supports bearer tokens, the server also accepts `Authorization: Bearer <key>`. Without a header, the account tools need the BladeCP sign-in, if your agent supports MCP sign-in. Never write the key itself into a versioned file.
 
 ## Install from a release archive
 

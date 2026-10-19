@@ -4,8 +4,8 @@
 
 | Symptom | What to check |
 | --- | --- |
-| Only `search_docs`, `get_doc_page` and `list_doc_pages` show up | No key reached the server, so it runs in documentation-only mode. Check that `BLADECP_API_KEY` is set in the environment where the agent starts, then start a new session. In Codex, Cursor and Antigravity CLI, the plugin's server never carries the key: add the entry described in [Installation](installation.md) for that agent. |
-| The account tools answer with an authentication error | The key expired or was revoked. Create a new key in the Hub and update the variable. In Antigravity CLI, run `agy mcp add` again with the new key. |
+| An account tool answers with a sign-in request or `401` | No key reached the server and you have not signed in with BladeCP. In an agent that supports MCP sign-in, such as Claude Code, allow the BladeCP sign-in that opens in your browser, then ask again. Otherwise, set `BLADECP_API_KEY` in the environment where the agent starts and start a new session. In Codex, Cursor and Antigravity CLI, the plugin's server never carries the key: add the entry described in [Installation](installation.md) for that agent. In OpenCode, `"oauth": false` turns the sign-in off, so the account tools need the key. |
+| The account tools answer with an authentication error although a key is set | The key expired or was revoked. Create a new key in the Hub and update the variable. In Antigravity CLI, run `agy mcp add` again with the new key. |
 | An account tool answers `403` with `insufficient_scope` | The key lacks a scope. Ask the agent to run `get_account` to see the scopes in use, then create a key with the scope the task needs. |
 | No `bladecp` server at all | The plugin is not installed or is disabled, or the MCP entry is missing. Install it again. Meanwhile, the agent can use the BladeCP CLI read commands with `--json`. |
 | Documentation tools appear twice | Two servers point to the BladeCP MCP. In Cursor, turn off the plugin's `bladecp` server in **Customize**. In Antigravity CLI this is expected when you added `bladecp-account`. |
@@ -34,6 +34,10 @@
 | `bladecp whoami --json` exits with code 3 | You are not signed in. Run `bladecp login` in your own terminal. |
 | The browser does not open on `bladecp login` | Run `bladecp login --no-browser` and open the address it prints on the same computer. |
 | A migration stops with exit code 10 | BladeCP is waiting for you, for example to confirm the domain. The skill `bladecp-migrate` explains the next step. |
+| A command is unknown, such as `bladecp domains` or `bladecp partner` | The CLI is older than 0.4.0. Run `bladecp update`, or use `npx -y @bladecp/cli@latest`. |
+| A command exits with code 11 (`update_required`) | BladeCP no longer accepts this CLI version. Update it as above. |
+| A partner command exits with code 4 (`partner_only`) | The key in use is not a partner key. Set `BLADECP_API_KEY` to a partner key, created in the partner area of the Hub, and start a new session. |
+| A command exits with code 4 (`insufficient_scope`) | The key lacks the permission for that action. `bladecp whoami --json` shows its scopes and `bladecp api list --json` the scopes of each route. |
 
 For the complete CLI behavior, see the [BladeCP CLI documentation](https://developers.bladecp.com/cli).
 

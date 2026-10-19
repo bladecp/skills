@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1520" height="1300" viewBox="0 0 1520 1300" role="img" aria-labelledby="title desc">
 <title id="title">How the BladeCP Agent Skills work</title>
-<desc id="desc">Your AI agent loads the BladeCP Agent Skills. The bladecp skill picks the right tool and points to the documentation, bladecp-migrate runs the BladeCP CLI to migrate a cPanel backup up to the preview, and bladecp-servers reads the account through the BladeCP MCP. The MCP at mcp.bladecp.com/mcp offers the documentation tools without a key and eight read-only account tools with the key from BLADECP_API_KEY, calling the Customer API at api.bladecp.com. Every skill reads BladeCP Developers at developers.bladecp.com. Approving, cancelling and retrying a migration stay with you.</desc>
+<desc id="desc">Your AI agent loads the BladeCP Agent Skills. The bladecp skill picks the right tool and points to the documentation, bladecp-migrate runs the BladeCP CLI to migrate a cPanel backup up to the preview, and bladecp-servers reads the account through the BladeCP MCP. The MCP at mcp.bladecp.com/mcp offers the documentation and public tools without a key and eight read-only account tools with a sign-in with BladeCP or the key from BLADECP_API_KEY, calling the Customer API at api.bladecp.com. Every skill reads BladeCP Developers at developers.bladecp.com. Approving, cancelling and retrying a migration stay with you.</desc>
 <defs>
 <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f0f2b"/><stop offset="1" stop-color="#0a0a1d"/></linearGradient>
 <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
@@ -84,7 +84,7 @@
 <text x="348.14" y="1074" font-size="17" fill="#a5a6c9">Documentation, no key needed</text>
 <path d="M56 1106H1464" stroke="#fff" stroke-opacity=".08"/>
 <text x="56" y="1146" font-size="18" fill="#8b8fb8">The MCP only reads. Uploads go through the BladeCP CLI; approving, cancelling and retrying stay with you.</text>
-<text x="56" y="1180" font-size="18" fill="#8b8fb8">Without BLADECP_API_KEY, the MCP answers in documentation-only mode.</text>
+<text x="56" y="1180" font-size="18" fill="#8b8fb8">Without BLADECP_API_KEY, the account tools ask you to sign in with BladeCP.</text>
 <path d="M356 396H440" fill="none" stroke="#818cf8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ai)"/>
 <path d="M1080 396H1164" fill="none" stroke="#818cf8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ai)"/>
 <path d="M206 503V470" fill="none" stroke="#818cf8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ai)"/>

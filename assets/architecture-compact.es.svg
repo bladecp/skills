@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="2283" viewBox="0 0 600 2283" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="2308" viewBox="0 0 600 2308" role="img" aria-labelledby="title desc">
 <title id="title">Cómo funcionan las BladeCP Agent Skills</title>
-<desc id="desc">Tu agente de IA carga las BladeCP Agent Skills. La skill bladecp elige la herramienta correcta y señala la documentación, bladecp-migrate ejecuta la BladeCP CLI para migrar un backup de cPanel hasta la vista previa y bladecp-servers lee la cuenta con el BladeCP MCP. El MCP en mcp.bladecp.com/mcp ofrece las herramientas de documentación sin clave y ocho herramientas de la cuenta, solo de lectura, con la clave de BLADECP_API_KEY, llamando a la Customer API en api.bladecp.com. Todas las skills leen BladeCP Developers en developers.bladecp.com. Aprobar, cancelar y reintentar una migración siguen en tus manos.</desc>
+<desc id="desc">Tu agente de IA carga las BladeCP Agent Skills. La skill bladecp elige la herramienta correcta y señala la documentación, bladecp-migrate ejecuta la BladeCP CLI para migrar un backup de cPanel hasta la vista previa y bladecp-servers lee la cuenta con el BladeCP MCP. El MCP en mcp.bladecp.com/mcp ofrece las herramientas de documentación y las públicas sin clave y ocho herramientas de la cuenta, solo de lectura, con el inicio de sesión de BladeCP o la clave de BLADECP_API_KEY, llamando a la Customer API en api.bladecp.com. Todas las skills leen BladeCP Developers en developers.bladecp.com. Aprobar, cancelar y reintentar una migración siguen en tus manos.</desc>
 <defs>
 <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f0f2b"/><stop offset="1" stop-color="#0a0a1d"/></linearGradient>
 <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
@@ -10,34 +10,34 @@
 <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0b1a"/><stop offset="1" stop-color="#05050c"/></linearGradient>
 <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0) scale(372 360)"><stop offset="0" stop-color="#4f46e5" stop-opacity=".42"/><stop offset=".72" stop-color="#4f46e5" stop-opacity="0"/></radialGradient>
 <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 0) scale(330 300)"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".22"/><stop offset=".7" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
-<radialGradient id="atmo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 2237) scale(264 90)"><stop offset="0" stop-color="#6366f1" stop-opacity=".46"/><stop offset=".45" stop-color="#8b5cf6" stop-opacity=".11"/><stop offset=".72" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
-<linearGradient id="planet" gradientUnits="userSpaceOnUse" x1="0" y1="2237" x2="0" y2="2327"><stop offset="0" stop-color="#05060f"/><stop offset="1" stop-color="#000"/></linearGradient>
+<radialGradient id="atmo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 2262) scale(264 90)"><stop offset="0" stop-color="#6366f1" stop-opacity=".46"/><stop offset=".45" stop-color="#8b5cf6" stop-opacity=".11"/><stop offset=".72" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+<linearGradient id="planet" gradientUnits="userSpaceOnUse" x1="0" y1="2262" x2="0" y2="2352"><stop offset="0" stop-color="#05060f"/><stop offset="1" stop-color="#000"/></linearGradient>
 <linearGradient id="fadeG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000"/><stop offset=".16" stop-color="#737373"/><stop offset=".4" stop-color="#fff"/><stop offset=".6" stop-color="#fff"/><stop offset=".84" stop-color="#737373"/><stop offset="1" stop-color="#000"/></linearGradient>
-<mask id="fade" maskUnits="userSpaceOnUse" x="0" y="0" width="600" height="2283"><rect width="600" height="2283" fill="url(#fadeG)"/></mask>
+<mask id="fade" maskUnits="userSpaceOnUse" x="0" y="0" width="600" height="2308"><rect width="600" height="2308" fill="url(#fadeG)"/></mask>
 <radialGradient id="sun"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset=".3" stop-color="#6366f1" stop-opacity=".45"/><stop offset=".7" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
-<filter id="b16" filterUnits="userSpaceOnUse" x="-100" y="0" width="800" height="2283"><feGaussianBlur stdDeviation="16"/></filter>
-<filter id="b10" filterUnits="userSpaceOnUse" x="-100" y="0" width="800" height="2283"><feGaussianBlur stdDeviation="10"/></filter>
-<filter id="b5" filterUnits="userSpaceOnUse" x="-100" y="0" width="800" height="2283"><feGaussianBlur stdDeviation="5"/></filter>
-<filter id="b2" filterUnits="userSpaceOnUse" x="-100" y="0" width="800" height="2283"><feGaussianBlur stdDeviation="1.6"/></filter>
-<clipPath id="frame"><rect width="600" height="2283" rx="24"/></clipPath>
+<filter id="b16" filterUnits="userSpaceOnUse" x="-100" y="0" width="800" height="2308"><feGaussianBlur stdDeviation="16"/></filter>
+<filter id="b10" filterUnits="userSpaceOnUse" x="-100" y="0" width="800" height="2308"><feGaussianBlur stdDeviation="10"/></filter>
+<filter id="b5" filterUnits="userSpaceOnUse" x="-100" y="0" width="800" height="2308"><feGaussianBlur stdDeviation="5"/></filter>
+<filter id="b2" filterUnits="userSpaceOnUse" x="-100" y="0" width="800" height="2308"><feGaussianBlur stdDeviation="1.6"/></filter>
+<clipPath id="frame"><rect width="600" height="2308" rx="24"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
-<rect width="600" height="2283" fill="url(#sky)"/>
-<rect width="600" height="2283" fill="url(#glowA)"/>
-<rect width="600" height="2283" fill="url(#glowB)"/>
-<rect class="atmo" width="600" height="2283" fill="url(#atmo)"/>
-<g><circle cx="194.46" cy="2227.71" r="1.13" fill="#c7d2fe" fill-opacity="0.22"/><circle cx="190.08" cy="2232.48" r="0.81" fill="#c7d2fe" fill-opacity="0.47"/><circle cx="403.48" cy="2219.5" r="0.67" fill="#c7d2fe" fill-opacity="0.25"/><circle cx="407.25" cy="2233.47" r="0.96" fill="#c7d2fe" fill-opacity="0.27"/><circle cx="283.99" cy="2209.25" r="0.63" fill="#c7d2fe" fill-opacity="0.28"/><circle cx="121.66" cy="2215.79" r="0.92" fill="#c7d2fe" fill-opacity="0.19"/><circle cx="253.49" cy="2216.27" r="0.88" fill="#c7d2fe" fill-opacity="0.2"/><circle cx="121.52" cy="2216.6" r="0.89" fill="#c7d2fe" fill-opacity="0.39"/><circle cx="306.76" cy="2204.21" r="0.98" fill="#c7d2fe" fill-opacity="0.26"/><circle cx="146.58" cy="2210.15" r="0.57" fill="#c7d2fe" fill-opacity="0.46"/><circle cx="255.88" cy="2223.19" r="0.61" fill="#c7d2fe" fill-opacity="0.24"/><circle cx="409.6" cy="2224.68" r="0.81" fill="#c7d2fe" fill-opacity="0.36"/><circle cx="25.37" cy="2235.1" r="0.99" fill="#c7d2fe" fill-opacity="0.24"/><circle cx="431.41" cy="2211.02" r="1.23" fill="#c7d2fe" fill-opacity="0.38"/><circle cx="379.44" cy="2229.42" r="0.71" fill="#c7d2fe" fill-opacity="0.47"/><circle cx="569.69" cy="2239.4" r="1.18" fill="#c7d2fe" fill-opacity="0.17"/><circle cx="455.92" cy="2195.91" r="1.22" fill="#c7d2fe" fill-opacity="0.43"/><circle cx="267.67" cy="2197.46" r="0.73" fill="#c7d2fe" fill-opacity="0.12"/><circle cx="127.71" cy="2203.53" r="1.21" fill="#c7d2fe" fill-opacity="0.31"/><circle cx="374.18" cy="2231.58" r="0.84" fill="#c7d2fe" fill-opacity="0.2"/><circle cx="377.33" cy="2230.01" r="0.87" fill="#c7d2fe" fill-opacity="0.17"/><circle cx="354.8" cy="2223.68" r="0.53" fill="#c7d2fe" fill-opacity="0.4"/></g>
-<path d="M0 2258A900 367.2 0 0 1 600 2258L600 2283L0 2283Z" fill="url(#planet)"/>
+<rect width="600" height="2308" fill="url(#sky)"/>
+<rect width="600" height="2308" fill="url(#glowA)"/>
+<rect width="600" height="2308" fill="url(#glowB)"/>
+<rect class="atmo" width="600" height="2308" fill="url(#atmo)"/>
+<g><circle cx="194.46" cy="2252.71" r="1.13" fill="#c7d2fe" fill-opacity="0.22"/><circle cx="190.08" cy="2257.48" r="0.81" fill="#c7d2fe" fill-opacity="0.47"/><circle cx="403.48" cy="2244.5" r="0.67" fill="#c7d2fe" fill-opacity="0.25"/><circle cx="407.25" cy="2258.47" r="0.96" fill="#c7d2fe" fill-opacity="0.27"/><circle cx="283.99" cy="2234.25" r="0.63" fill="#c7d2fe" fill-opacity="0.28"/><circle cx="121.66" cy="2240.79" r="0.92" fill="#c7d2fe" fill-opacity="0.19"/><circle cx="253.49" cy="2241.27" r="0.88" fill="#c7d2fe" fill-opacity="0.2"/><circle cx="121.52" cy="2241.6" r="0.89" fill="#c7d2fe" fill-opacity="0.39"/><circle cx="306.76" cy="2229.21" r="0.98" fill="#c7d2fe" fill-opacity="0.26"/><circle cx="146.58" cy="2235.15" r="0.57" fill="#c7d2fe" fill-opacity="0.46"/><circle cx="255.88" cy="2248.19" r="0.61" fill="#c7d2fe" fill-opacity="0.24"/><circle cx="409.6" cy="2249.68" r="0.81" fill="#c7d2fe" fill-opacity="0.36"/><circle cx="25.37" cy="2260.1" r="0.99" fill="#c7d2fe" fill-opacity="0.24"/><circle cx="431.41" cy="2236.02" r="1.23" fill="#c7d2fe" fill-opacity="0.38"/><circle cx="379.44" cy="2254.42" r="0.71" fill="#c7d2fe" fill-opacity="0.47"/><circle cx="569.69" cy="2264.4" r="1.18" fill="#c7d2fe" fill-opacity="0.17"/><circle cx="455.92" cy="2220.91" r="1.22" fill="#c7d2fe" fill-opacity="0.43"/><circle cx="267.67" cy="2222.46" r="0.73" fill="#c7d2fe" fill-opacity="0.12"/><circle cx="127.71" cy="2228.53" r="1.21" fill="#c7d2fe" fill-opacity="0.31"/><circle cx="374.18" cy="2256.58" r="0.84" fill="#c7d2fe" fill-opacity="0.2"/><circle cx="377.33" cy="2255.01" r="0.87" fill="#c7d2fe" fill-opacity="0.17"/><circle cx="354.8" cy="2248.68" r="0.53" fill="#c7d2fe" fill-opacity="0.4"/></g>
+<path d="M0 2283A900 367.2 0 0 1 600 2283L600 2308L0 2308Z" fill="url(#planet)"/>
 <g mask="url(#fade)" fill="none" stroke-linecap="round">
-<path d="M-60 2267.66A900 367.2 0 0 1 660 2267.66" stroke="#6366f1" stroke-opacity=".5" stroke-width="26" filter="url(#b16)"/>
-<path d="M-60 2267.66A900 367.2 0 0 1 660 2267.66" stroke="#6366f1" stroke-opacity=".85" stroke-width="3" filter="url(#b5)"/>
-<path d="M-60 2267.66A900 367.2 0 0 1 660 2267.66" stroke="#fff" stroke-opacity=".85" stroke-width="1.4"/>
-<path class="sweep-glow" d="M-60 2267.66A900 367.2 0 0 1 660 2267.66" stroke="#a5b4fc" stroke-width="7" stroke-dasharray="120 1447.05" stroke-dashoffset="-301.76" filter="url(#b5)"/>
-<path class="sweep-core" d="M-60 2267.66A900 367.2 0 0 1 660 2267.66" stroke="#fff" stroke-width="2.2" stroke-dasharray="34 1447.05" stroke-dashoffset="-344.76"/>
+<path d="M-60 2292.66A900 367.2 0 0 1 660 2292.66" stroke="#6366f1" stroke-opacity=".5" stroke-width="26" filter="url(#b16)"/>
+<path d="M-60 2292.66A900 367.2 0 0 1 660 2292.66" stroke="#6366f1" stroke-opacity=".85" stroke-width="3" filter="url(#b5)"/>
+<path d="M-60 2292.66A900 367.2 0 0 1 660 2292.66" stroke="#fff" stroke-opacity=".85" stroke-width="1.4"/>
+<path class="sweep-glow" d="M-60 2292.66A900 367.2 0 0 1 660 2292.66" stroke="#a5b4fc" stroke-width="7" stroke-dasharray="120 1447.05" stroke-dashoffset="-301.76" filter="url(#b5)"/>
+<path class="sweep-core" d="M-60 2292.66A900 367.2 0 0 1 660 2292.66" stroke="#fff" stroke-width="2.2" stroke-dasharray="34 1447.05" stroke-dashoffset="-344.76"/>
 </g>
-<ellipse cx="300" cy="2237" rx="216" ry="32" fill="url(#sun)" filter="url(#b10)" style="mix-blend-mode:screen"/>
-<ellipse cx="300" cy="2237" rx="48" ry="2.4" fill="#fff" fill-opacity=".9" filter="url(#b2)"/>
-<circle cx="300" cy="2237" r="2.4" fill="#fff"/>
+<ellipse cx="300" cy="2262" rx="216" ry="32" fill="url(#sun)" filter="url(#b10)" style="mix-blend-mode:screen"/>
+<ellipse cx="300" cy="2262" rx="48" ry="2.4" fill="#fff" fill-opacity=".9" filter="url(#b2)"/>
+<circle cx="300" cy="2262" r="2.4" fill="#fff"/>
 </g>
 <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, Arial, sans-serif">
 <rect x="24" y="36" width="48" height="5" rx="2.5" fill="url(#brand)"/>
@@ -64,7 +64,8 @@
 <path d="M24 2066H576" stroke="#fff" stroke-opacity=".08"/>
 <text x="24" y="2100" font-size="16" fill="#8b8fb8">El MCP solo lee. La subida pasa por la</text>
 <text x="24" y="2125" font-size="16" fill="#8b8fb8">BladeCP CLI; aprobar, cancelar y reintentar</text>
-<text x="24" y="2150" font-size="16" fill="#8b8fb8">siguen en tus manos. Sin clave, el MCP</text>
-<text x="24" y="2175" font-size="16" fill="#8b8fb8">responde en modo solo documentación.</text>
+<text x="24" y="2150" font-size="16" fill="#8b8fb8">siguen en tus manos. Sin clave, las</text>
+<text x="24" y="2175" font-size="16" fill="#8b8fb8">herramientas de la cuenta piden iniciar</text>
+<text x="24" y="2200" font-size="16" fill="#8b8fb8">sesión con BladeCP.</text>
 </g>
 </svg>
