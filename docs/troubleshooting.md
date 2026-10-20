@@ -34,7 +34,7 @@
 | `bladecp whoami --json` exits with code 3 | You are not signed in. Run `bladecp login` in your own terminal. |
 | The browser does not open on `bladecp login` | Run `bladecp login --no-browser` and open the address it prints on the same computer. |
 | A migration stops with exit code 10 | BladeCP is waiting for you, for example to confirm the domain. The skill `bladecp-migrate` explains the next step. |
-| A command is unknown, such as `bladecp domains` or `bladecp partner` | The CLI is older than 0.4.0. Run `bladecp update`, or use `npx -y @bladecp/cli@latest`. |
+| A command is unknown, such as `bladecp domains` or `bladecp partner` | The CLI is older than 0.4.0. Run `bladecp update`, or use `npx -y @bladecp/cli@0.4.3`. |
 | A command exits with code 11 (`update_required`) | BladeCP no longer accepts this CLI version. Update it as above. |
 | A partner command exits with code 4 (`partner_only`) | The key in use is not a partner key. Set `BLADECP_API_KEY` to a partner key, created in the partner area of the Hub, and start a new session. |
 | A command exits with code 4 (`insufficient_scope`) | The key lacks the permission for that action. `bladecp whoami --json` shows its scopes and `bladecp api list --json` the scopes of each route. |

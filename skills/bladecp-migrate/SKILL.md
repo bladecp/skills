@@ -25,7 +25,7 @@ bladecp --version
 ```
 
 - **`bladecp` is installed:** use it for every command below.
-- **`command -v bladecp` finds nothing:** run `npx -y @bladecp/cli --version` and use `npx -y @bladecp/cli <command>` in place of `bladecp` in the examples. It is the same program. Both need Node.js 20 or later; if `npx` is missing too, ask the user to install Node.js LTS.
+- **`command -v bladecp` finds nothing:** run `npx -y @bladecp/cli@0.4.3 --version` and use `npx -y @bladecp/cli@0.4.3 <command>` in place of `bladecp` in the examples. It is the same program. Both need Node.js 20 or later; if `npx` is missing too, ask the user to install Node.js LTS.
 - **Your permissions block a command:** tell the user which command was blocked and ask whether to allow it. The CLI is still there: do not say it is blocked, and do not ask to install it or to sign in again because of it.
 
 Always add `--json`. Every command then prints exactly one JSON document on stdout (`{ "ok": true, "data": ... }` or `{ "ok": false, "error": ... }`), with no colors, progress or questions, and the exit code tells you what happened. With `--json` nothing asks first, so `migrations approve` and `migrations cancel` run as soon as you send them.
@@ -42,7 +42,7 @@ Always add `--json`. Every command then prints exactly one JSON document on stdo
 | 8 | Network, server or upload failure. Run the same command again. |
 | 9 | Migration failed or was cancelled |
 | 10 | Waiting for a person, for example to confirm the domain |
-| 11 | This CLI version is no longer accepted. Ask the user to run `bladecp update`, or use `npx -y @bladecp/cli@latest`. |
+| 11 | This CLI version is no longer accepted. Ask the user to run `bladecp update`, or meanwhile use the version this plugin was tested with, `npx -y @bladecp/cli@0.4.3`. |
 | 130 | Interrupted |
 
 ## 2. Sign in

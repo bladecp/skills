@@ -13,7 +13,7 @@ Reading goes through the MCP or the CLI read commands. Changes to a server (doma
 
 The `bladecp` MCP server lives at `https://mcp.bladecp.com/mcp`.
 
-- **An account tool answers with a sign-in request or `401`:** no key reached the server and the user has not signed in with BladeCP (an empty or unexpanded variable counts as no key). Every tool is listed either way, and the documentation tools, `recommend_plan` and `explain_migration` work without signing in.
+- **An account tool answers with a sign-in request or `401`:** no key reached the server and the user has not signed in with BladeCP (an empty or unexpanded variable counts as no key). Every tool is listed either way, and the documentation tools, `recommend_plan`, `explain_migration` and `explain_server_closing` work without signing in.
   1. **Sign in with BladeCP first.** In Claude Code, ask the user to run `/mcp`, choose `plugin:bladecp:bladecp` and pick Authenticate (Claude Code may also open the sign-in by itself). In Codex, `codex mcp login bladecp`; in OpenCode, `opencode mcp auth bladecp`; other clients use their own MCP sign-in. The user signs in in the browser and allows the read-only access; then call the tool again.
   2. **Or use a key.** Check with `test -n "$BLADECP_API_KEY" && echo set || echo missing`, then ask the user to set `BLADECP_API_KEY` in the environment where the agent starts and open a new session, as described at https://developers.bladecp.com/mcp.md. In Codex, Cursor and Antigravity the key needs its own configuration entry (https://developers.bladecp.com/skills.md); an OpenCode entry with `"oauth": false` uses only the key.
 
@@ -22,23 +22,24 @@ The `bladecp` MCP server lives at `https://mcp.bladecp.com/mcp`.
 
 ## Tools
 
-Every tool is read-only. Inputs are closed: send only the listed fields. The documentation tools, `recommend_plan` and `explain_migration` work without signing in; the others need the BladeCP sign-in or a key.
+Every tool is read-only. Inputs are closed: send only the listed fields. The documentation tools, `recommend_plan`, `explain_migration` and `explain_server_closing` work without signing in; the others need the BladeCP sign-in or a key.
 
 | Tool | Inputs | Returns |
 | --- | --- | --- |
-| `get_account` | none | Customer UUID and email, key UUID, scopes and rate limit. Start here to confirm the account and its scopes. |
-| `list_servers` | `domain`, `status`, `include_deleted`, `page`, `limit` (all optional) | Compact rows: uuid, status, primary domain, product, plan, location, domains. Deleted servers only with `include_deleted: true`. `summary` has `total` and `byStatus` for the whole account: quote it, never count rows. Paginated: `page` from 1, `limit` up to 100 (default 25); `meta.hasMore` tells whether there is another page. |
+| `get_account` | none | Email, scopes, rate limit and whether the access comes from an API key or the BladeCP sign-in. Start here to confirm the account and its scopes. |
+| `list_servers` | `domain`, `status`, `include_deleted`, `page`, `limit` (all optional) | Compact rows: uuid, status, primary domain, product, plan, location (city and country), domains. Deleted servers only with `include_deleted: true`. `summary` has `total` and `byStatus` for the whole account: quote it, never count rows. Paginated: `page` from 1, `limit` up to 100 (default 25); `meta.hasMore` tells whether there is another page. Never use it to pick a server to delete or cancel: see `explain_server_closing`. |
 | `get_server` | `uuid` | Status, plan resources, location, components with status and version, domain bindings. Never configuration values or credentials. |
 | `get_server_usage` | `uuid`, `from`, `to` (optional, ISO 8601 UTC or unix seconds) | Latest usage snapshot next to the plan limits: disk, bandwidth, email and FTP accounts, databases, domains, with percentages and a health status. Pass `to` for an earlier snapshot. `metering_pending` means there is no measurement yet: say so, never estimate. |
 | `list_server_domains` | `uuid` | Primary domain, additional domains and the preview host |
 | `list_migrations` | none | Compact rows, newest first: uuid, phase, primary domain, backup status, target server, staging URL |
 | `get_migration` | `uuid`, `include_discovery` (optional) | Phase, domains, components, staging URL, timing and retry. The backup's discovery report only with `include_discovery: true` (it can be large). |
-| `list_migration_destinations` | `currency` (optional, ISO 4217 such as `USD` or `BRL`) | Plans, monthly prices and locations available for a new migration |
+| `list_migration_destinations` | `currency` (optional, ISO 4217 such as `USD` or `BRL`) | Plans, monthly prices and locations available for a new migration. Use it to compare destinations when the user is about to migrate a site, not to answer which product fits. |
 | `list_doc_pages` | `locale` (optional: `en`, `pt-BR`, `es`) | Every documentation page with its Markdown URL |
 | `get_doc_page` | `path` | One page as Markdown. `path` is a slug such as `cli` or `pt-BR/mcp`, a `.md` path or a full developers.bladecp.com URL; `/` is the overview. |
 | `search_docs` | `query`, `locale` (optional) | Matching excerpts, each with the `path` for `get_doc_page` |
-| `recommend_plan` | `project_type`, `sites`, `traffic`, `needs_email`, `needs_own_server`, `scales_across_regions`, `heavy_database_or_compliance`, `hosts_for_clients`, `locale` (only `project_type` is required) | One or two BladeCP products for the project, each with the reasons and a link to the bladecp.com page with its current plans. It never quotes prices: signed in, `list_migration_destinations` has the plans with prices. Fill an input only with what the user said. |
-| `explain_migration` | `source`, `locale` (both optional; `source` is `cpanel`, `wordpress`, `whm` or `other`) | Short steps to move a site to BladeCP with Fast Deploy, what moves and what does not, and links to the guides |
+| `recommend_plan` | `project_type`, `sites`, `traffic`, `needs_email`, `needs_own_server`, `scales_across_regions`, `heavy_database_or_compliance`, `hosts_for_clients`, `locale` (only `project_type` is required) | One or two BladeCP products for the project, each with the reasons and a link to the bladecp.com page with its current plans. It returns no plan names and no prices, and the answer names none: the current plans and prices are on the linked product and pricing pages. Fill an input only with what the user said. |
+| `explain_migration` | `source`, `locale` (both optional; `source` is `cpanel`, `wordpress`, `whm` or `other`) | Short steps to move a site to BladeCP with Fast Deploy, what moves and what does not, and links to the guides. Its first `notes` start with `Keep in the answer:` (approval completes the migration, pointing the domain is optional, what does not come over): keep them in the answer. |
+| `explain_server_closing` | none | How the user closes a server: `summary`, `steps`, `links` (the BladeCP Hub) and `notes`. The MCP only reads: the cancellation is asked for in the BladeCP Hub, on the page of the server (danger zone, Cancel server), and the BladeCP team gets in touch before anything is deleted for good. Call it whenever the user asks to delete, cancel, remove or close a server, and answer with it without asking which server. |
 
 Rules:
 
@@ -55,7 +56,7 @@ Rules:
 - **How is my migration going?** `list_migrations`, then `get_migration`. Report the phase, who acts next and the staging URL. The phase table is in `bladecp-migrate`.
 - **Where can I migrate to?** `list_migration_destinations`, with `currency` when the user cares about one.
 - **Can I use this domain on BladeCP?** `bladecp domains check <host> --json`. It reserves nothing.
-- **Can I delete or cancel my server?** The MCP only reads and the CLI has no command for it: the user does it in the Hub. Do not look for another route with `bladecp api`.
+- **Can I delete or cancel my server?** `explain_server_closing`, and answer with what it returns: the MCP only reads and the CLI has no command for it, so the user asks for the cancellation in the BladeCP Hub, on the page of the server, and the BladeCP team gets in touch before anything is deleted for good. Do not ask which server, do not list servers to pick one and do not look for another route with `bladecp api`. Offering to show the status of the servers is fine.
 
 ## Manage a server with the BladeCP CLI
 

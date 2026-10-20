@@ -2,6 +2,17 @@
 
 All notable changes to BladeCP Agent Skills are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [0.2.2] - 2026-10-20
+
+Ready for the plugin directories.
+
+### Changed
+
+- When the BladeCP CLI is not installed, the skills run the version they were tested with, `npx -y @bladecp/cli@0.4.3`, instead of an unpinned one.
+- The Claude Code manifest has a display name, BladeCP.
+- The partner skill says that a Stack Container always gets a web server, NGINX by default, and asks for Apache only when the user wants it.
+- The skills know `explain_server_closing`, the new tool of BladeCP MCP 0.4.0: a request to delete or cancel the user's own server goes to the BladeCP Hub, on the page of the server, without asking which server, and a product recommendation names no plans or prices.
+
 ## [0.2.1] - 2026-10-20
 
 Fixes from six test rounds of the plugin in Claude Code: the skills sign in first, answer from BladeCP data and stop guessing.

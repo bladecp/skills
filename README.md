@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-0.2.1-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="Version 0.2.1"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-0.2.2-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="Version 0.2.2"></a>
   <a href="#installation"><img src="https://img.shields.io/badge/agents-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20Cursor%20%C2%B7%20Antigravity%20%C2%B7%20OpenCode-6366f1?style=flat-square&amp;labelColor=1e1b4b" alt="Agents: Claude Code, Codex, Cursor, Antigravity and OpenCode"></a>
   <a href="#skills"><img src="https://img.shields.io/badge/skills-4-7c3aed?style=flat-square&amp;labelColor=1e1b4b" alt="4 skills"></a><br>
-  <a href="#mcp"><img src="https://img.shields.io/badge/MCP-13%20read--only%20tools-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="BladeCP MCP with 13 read-only tools"></a>
-  <a href="#quality"><img src="https://img.shields.io/badge/release%20checks-38%20passing-8b5cf6?style=flat-square&amp;labelColor=1e1b4b" alt="38 release checks passing for 0.2.1"></a>
+  <a href="#mcp"><img src="https://img.shields.io/badge/MCP-14%20read--only%20tools-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="BladeCP MCP with 14 read-only tools"></a>
+  <a href="#quality"><img src="https://img.shields.io/badge/release%20checks-38%20passing-8b5cf6?style=flat-square&amp;labelColor=1e1b4b" alt="38 release checks passing for 0.2.2"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-4338ca?style=flat-square&amp;labelColor=1e1b4b" alt="MIT license"></a>
   <a href="https://github.com/bladecp/skills/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/bladecp/skills/ci.yml?branch=main&amp;style=flat-square&amp;labelColor=1e1b4b&amp;label=public%20CI" alt="Public CI status"></a>
 </p>
@@ -23,9 +23,9 @@
 <p align="center">
   <a href="#installation"><strong>Install</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/bladecp/skills/releases/tag/v0.2.1">Release notes</a>
+  <a href="https://github.com/bladecp/skills/releases/tag/v0.2.2">Release notes</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/bladecp/skills/releases/download/v0.2.1/SHA256SUMS">SHA-256 checksum</a>
+  <a href="https://github.com/bladecp/skills/releases/download/v0.2.2/SHA256SUMS">SHA-256 checksum</a>
 </p>
 
 <p align="center">
@@ -73,7 +73,7 @@ Skills load automatically when the conversation is about their subject. They poi
 | Skills | `bladecp`, `bladecp-migrate`, `bladecp-servers` and `bladecp-partner`, in the Agent Skills format |
 | MCP server | One server, `bladecp`, at `https://mcp.bladecp.com/mcp` |
 | Manifests | Claude Code, Codex, Cursor, Antigravity and Agent Plugins |
-| BladeCP CLI | Run on demand with `npx @bladecp/cli`; version 0.4.0 or later for the server, partner and `bladecp api` commands. It needs Node.js 20 or later and has its own sign-in |
+| BladeCP CLI | Run on demand with `npx @bladecp/cli@0.4.3`; version 0.4.0 or later for the server, partner and `bladecp api` commands. It needs Node.js 20 or later and has its own sign-in |
 
 ## Architecture
 
@@ -107,7 +107,7 @@ The agent loads the skills, the skills decide which BladeCP tool fits the task, 
 | **OpenCode** | Copy `skills/` to `~/.config/opencode/skills/` | An entry in `opencode.json` |
 | **Other agents** | `npx -y skills add bladecp/skills --skill '*'` | Your agent's MCP settings |
 
-Every install works without a key: the documentation tools, `recommend_plan` and `explain_migration` answer right away, and the account tools ask you to sign in with BladeCP in agents that support MCP sign-in. With your key, the account tools work right away. The steps for each agent follow; checks, updates and removal are in [docs/installation.md](docs/installation.md).
+Every install works without a key: the documentation tools, `recommend_plan`, `explain_migration` and `explain_server_closing` answer right away, and the account tools ask you to sign in with BladeCP in agents that support MCP sign-in. With your key, the account tools work right away. The steps for each agent follow; checks, updates and removal are in [docs/installation.md](docs/installation.md).
 
 ### Claude Code
 
@@ -242,10 +242,10 @@ Each [release](https://github.com/bladecp/skills/releases) also ships `bladecp-s
 
 | Tools | Availability |
 | --- | --- |
-| `search_docs`, `get_doc_page`, `list_doc_pages`, `recommend_plan`, `explain_migration` | Always, even without a key |
+| `search_docs`, `get_doc_page`, `list_doc_pages`, `recommend_plan`, `explain_migration`, `explain_server_closing` | Always, even without a key |
 | `get_account`, `list_servers`, `get_server`, `get_server_usage`, `list_server_domains`, `list_migrations`, `get_migration`, `list_migration_destinations` | With the BladeCP sign-in or an API key |
 
-The MCP is read-only. It does not upload backups or create, approve, cancel or retry migrations. Without a key, it lists every tool: the documentation tools, `recommend_plan` (which BladeCP product fits a project) and `explain_migration` (how a site moves to BladeCP) answer right away, and an account tool answers with a sign-in request. Agents that support MCP sign-in, such as Claude Code, then open the BladeCP sign-in in your browser, where you allow read-only access (`bladecp:read`). You can disconnect it at any time in your BladeCP account, under [Connected apps](https://secure.bladecp.com/account/applications). With your key, the account tools work right away, as before. See the [BladeCP MCP documentation](https://developers.bladecp.com/mcp).
+The MCP is read-only. It does not upload backups or create, approve, cancel or retry migrations. Without a key, it lists every tool: the documentation tools, `recommend_plan` (which BladeCP product fits a project), `explain_migration` (how a site moves to BladeCP) and `explain_server_closing` (how to ask for the cancellation of a server in the Hub) answer right away, and an account tool answers with a sign-in request. Agents that support MCP sign-in, such as Claude Code, then open the BladeCP sign-in in your browser, where you allow read-only access (`bladecp:read`). You can disconnect it at any time in your BladeCP account, under [Connected apps](https://secure.bladecp.com/account/applications). With your key, the account tools work right away, as before. See the [BladeCP MCP documentation](https://developers.bladecp.com/mcp).
 
 ## API key
 
@@ -264,7 +264,7 @@ The variable is what the MCP server needs when you do not sign in with BladeCP. 
 
 **Partner keys.** The `bladecp partner` commands need a partner key, with the `partner:read` scope, created in the partner area of the Hub under API keys. `bladecp login` saves a personal key, so for partner work set `BLADECP_API_KEY` to the partner key in the environment where the agent starts.
 
-**Without a key**, you still have the skills, the MCP tools that need no sign-in (`search_docs`, `get_doc_page`, `list_doc_pages`, `recommend_plan` and `explain_migration`), the account tools after you sign in with BladeCP in an agent that supports it, and the BladeCP CLI after `bladecp login`.
+**Without a key**, you still have the skills, the MCP tools that need no sign-in (`search_docs`, `get_doc_page`, `list_doc_pages`, `recommend_plan`, `explain_migration` and `explain_server_closing`), the account tools after you sign in with BladeCP in an agent that supports it, and the BladeCP CLI after `bladecp login`.
 
 ## Security
 
@@ -283,7 +283,7 @@ Read [docs/security.md](docs/security.md) for the full model. To report a vulner
 
 ## Quality and validation
 
-Release `0.2.1` was validated by the maintainers before publication:
+Release `0.2.2` was validated by the maintainers before publication:
 
 - **38 release checks** for the release tooling: deterministic archive, closed file list, leak and link gates, and the safety locks of the publication step.
 - **Contract checks** on every skill and README: each MCP tool and its inputs, each BladeCP CLI command and flag, and each documentation page must exist in the current BladeCP contracts.

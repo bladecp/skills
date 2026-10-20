@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/versi%C3%B3n-0.2.1-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="Versión 0.2.1"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/versi%C3%B3n-0.2.2-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="Versión 0.2.2"></a>
   <a href="#instalacion"><img src="https://img.shields.io/badge/agentes-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20Cursor%20%C2%B7%20Antigravity%20%C2%B7%20OpenCode-6366f1?style=flat-square&amp;labelColor=1e1b4b" alt="Agentes: Claude Code, Codex, Cursor, Antigravity y OpenCode"></a>
   <a href="#skills"><img src="https://img.shields.io/badge/skills-4-7c3aed?style=flat-square&amp;labelColor=1e1b4b" alt="4 skills"></a><br>
-  <a href="#mcp"><img src="https://img.shields.io/badge/MCP-13%20herramientas%20de%20lectura-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="BladeCP MCP con 13 herramientas de solo lectura"></a>
-  <a href="#calidad"><img src="https://img.shields.io/badge/verificaciones-38%20aprobadas-8b5cf6?style=flat-square&amp;labelColor=1e1b4b" alt="38 verificaciones de release aprobadas en la 0.2.1"></a>
+  <a href="#mcp"><img src="https://img.shields.io/badge/MCP-14%20herramientas%20de%20lectura-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="BladeCP MCP con 14 herramientas de solo lectura"></a>
+  <a href="#calidad"><img src="https://img.shields.io/badge/verificaciones-38%20aprobadas-8b5cf6?style=flat-square&amp;labelColor=1e1b4b" alt="38 verificaciones de release aprobadas en la 0.2.2"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licencia-MIT-4338ca?style=flat-square&amp;labelColor=1e1b4b" alt="Licencia MIT"></a>
   <a href="https://github.com/bladecp/skills/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/bladecp/skills/ci.yml?branch=main&amp;style=flat-square&amp;labelColor=1e1b4b&amp;label=CI%20p%C3%BAblico" alt="Estado del CI público"></a>
 </p>
@@ -23,9 +23,9 @@
 <p align="center">
   <a href="#instalacion"><strong>Instalar</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/bladecp/skills/releases/tag/v0.2.1">Notas de la versión</a>
+  <a href="https://github.com/bladecp/skills/releases/tag/v0.2.2">Notas de la versión</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/bladecp/skills/releases/download/v0.2.1/SHA256SUMS">Checksum SHA-256</a>
+  <a href="https://github.com/bladecp/skills/releases/download/v0.2.2/SHA256SUMS">Checksum SHA-256</a>
 </p>
 
 <p align="center">
@@ -73,7 +73,7 @@ Las skills se cargan automáticamente cuando la conversación trata de su tema. 
 | Skills | `bladecp`, `bladecp-migrate`, `bladecp-servers` y `bladecp-partner`, en el formato Agent Skills |
 | Servidor MCP | Un único servidor, `bladecp`, en `https://mcp.bladecp.com/mcp` |
 | Manifiestos | Claude Code, Codex, Cursor, Antigravity y Agent Plugins |
-| BladeCP CLI | Se ejecuta bajo demanda con `npx @bladecp/cli`; versión 0.4.0 o posterior para los comandos de servidor, de socio y `bladecp api`. Necesita Node.js 20 o posterior y tiene su propio inicio de sesión |
+| BladeCP CLI | Se ejecuta bajo demanda con `npx @bladecp/cli@0.4.3`; versión 0.4.0 o posterior para los comandos de servidor, de socio y `bladecp api`. Necesita Node.js 20 o posterior y tiene su propio inicio de sesión |
 
 ## Arquitectura
 
@@ -109,7 +109,7 @@ El agente carga las skills, las skills deciden qué herramienta de BladeCP sirve
 | **OpenCode** | Copia `skills/` en `~/.config/opencode/skills/` | Una entrada en `opencode.json` |
 | **Otros agentes** | `npx -y skills add bladecp/skills --skill '*'` | La configuración de MCP de tu agente |
 
-Toda instalación funciona sin clave: las herramientas de documentación, `recommend_plan` y `explain_migration` responden al instante, y las herramientas de la cuenta te piden iniciar sesión con BladeCP en los agentes que admiten el inicio de sesión en MCP. Con tu clave, las herramientas de la cuenta funcionan directamente. Los pasos de cada agente vienen a continuación; la verificación, la actualización y la desinstalación están en [docs/installation.md](docs/installation.md) (en inglés).
+Toda instalación funciona sin clave: las herramientas de documentación, `recommend_plan`, `explain_migration` y `explain_server_closing` responden al instante, y las herramientas de la cuenta te piden iniciar sesión con BladeCP en los agentes que admiten el inicio de sesión en MCP. Con tu clave, las herramientas de la cuenta funcionan directamente. Los pasos de cada agente vienen a continuación; la verificación, la actualización y la desinstalación están en [docs/installation.md](docs/installation.md) (en inglés).
 
 ### Claude Code
 
@@ -244,10 +244,10 @@ Cada [release](https://github.com/bladecp/skills/releases) también incluye `bla
 
 | Herramientas | Disponibilidad |
 | --- | --- |
-| `search_docs`, `get_doc_page`, `list_doc_pages`, `recommend_plan`, `explain_migration` | Siempre, incluso sin clave |
+| `search_docs`, `get_doc_page`, `list_doc_pages`, `recommend_plan`, `explain_migration`, `explain_server_closing` | Siempre, incluso sin clave |
 | `get_account`, `list_servers`, `get_server`, `get_server_usage`, `list_server_domains`, `list_migrations`, `get_migration`, `list_migration_destinations` | Con el inicio de sesión de BladeCP o una clave de API |
 
-El MCP es solo de lectura. No sube backups ni crea, aprueba, cancela o reintenta migraciones. Sin clave, lista todas las herramientas: las de documentación, `recommend_plan` (qué producto de BladeCP sirve para un proyecto) y `explain_migration` (cómo llega un sitio a BladeCP) responden al instante, y una herramienta de la cuenta responde con una solicitud de inicio de sesión. Los agentes que admiten el inicio de sesión en MCP, como Claude Code, abren entonces el inicio de sesión de BladeCP en el navegador, donde permites el acceso de solo lectura (`bladecp:read`). Puedes desconectarlo cuando quieras en tu cuenta BladeCP, en [Apps conectadas](https://secure.bladecp.com/account/applications). Con tu clave, las herramientas de la cuenta funcionan directamente, como antes. Consulta la [documentación del BladeCP MCP](https://developers.bladecp.com/es/mcp).
+El MCP es solo de lectura. No sube backups ni crea, aprueba, cancela o reintenta migraciones. Sin clave, lista todas las herramientas: las de documentación, `recommend_plan` (qué producto de BladeCP sirve para un proyecto), `explain_migration` (cómo llega un sitio a BladeCP) y `explain_server_closing` (cómo pedir en el Hub la cancelación de un servidor) responden al instante, y una herramienta de la cuenta responde con una solicitud de inicio de sesión. Los agentes que admiten el inicio de sesión en MCP, como Claude Code, abren entonces el inicio de sesión de BladeCP en el navegador, donde permites el acceso de solo lectura (`bladecp:read`). Puedes desconectarlo cuando quieras en tu cuenta BladeCP, en [Apps conectadas](https://secure.bladecp.com/account/applications). Con tu clave, las herramientas de la cuenta funcionan directamente, como antes. Consulta la [documentación del BladeCP MCP](https://developers.bladecp.com/es/mcp).
 
 ## Clave de API
 
@@ -266,7 +266,7 @@ La variable es lo que necesita el servidor MCP cuando no inicias sesión con Bla
 
 **Claves de socio.** Los comandos `bladecp partner` necesitan una clave de socio, con el alcance `partner:read`, creada en el área de socio del Hub, en Claves de API. `bladecp login` guarda una clave personal; para el trabajo de socio, define `BLADECP_API_KEY` con la clave de socio en el entorno donde se abre el agente.
 
-**Sin clave**, sigues teniendo las skills, las herramientas del MCP que no piden iniciar sesión (`search_docs`, `get_doc_page`, `list_doc_pages`, `recommend_plan` y `explain_migration`), las herramientas de la cuenta después de iniciar sesión con BladeCP en un agente que lo admite y la BladeCP CLI después de `bladecp login`.
+**Sin clave**, sigues teniendo las skills, las herramientas del MCP que no piden iniciar sesión (`search_docs`, `get_doc_page`, `list_doc_pages`, `recommend_plan`, `explain_migration` y `explain_server_closing`), las herramientas de la cuenta después de iniciar sesión con BladeCP en un agente que lo admite y la BladeCP CLI después de `bladecp login`.
 
 ## Seguridad
 
@@ -285,7 +285,7 @@ El modelo completo está en [docs/security.md](docs/security.md) (en inglés). P
 
 ## Calidad y validación
 
-La versión `0.2.1` fue validada por los mantenedores antes de publicarse:
+La versión `0.2.2` fue validada por los mantenedores antes de publicarse:
 
 - **38 verificaciones de release** en las herramientas de publicación: paquete determinista, lista cerrada de archivos, controles de filtraciones y de enlaces y los bloqueos de la etapa de publicación.
 - **Verificación de contrato** en cada skill y README: cada herramienta del MCP y sus parámetros, cada comando y flag de la BladeCP CLI y cada página de la documentación deben existir en los contratos actuales de BladeCP.

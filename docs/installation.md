@@ -11,9 +11,9 @@ This guide installs the BladeCP Agent Skills and connects the BladeCP MCP server
 | OpenCode | Skills folder | An entry in `opencode.json` | Read from `BLADECP_API_KEY` by that entry |
 | Other agents | `skills` CLI | Your agent's MCP settings | Depends on the agent |
 
-Without a key, the BladeCP MCP server lists every tool. The documentation tools (`search_docs`, `get_doc_page` and `list_doc_pages`), `recommend_plan` and `explain_migration` work, and an account tool answers with a sign-in request: agents that support MCP sign-in, such as Claude Code, open the BladeCP sign-in in your browser, where you allow read-only access (`bladecp:read`). You can disconnect it later in your BladeCP account, under [Connected apps](https://secure.bladecp.com/account/applications). With a key, the read-only account tools work right away. To create the key and expose it as `BLADECP_API_KEY`, follow [API key](../README.md#api-key) in the README.
+Without a key, the BladeCP MCP server lists every tool. The documentation tools (`search_docs`, `get_doc_page` and `list_doc_pages`), `recommend_plan`, `explain_migration` and `explain_server_closing` work, and an account tool answers with a sign-in request: agents that support MCP sign-in, such as Claude Code, open the BladeCP sign-in in your browser, where you allow read-only access (`bladecp:read`). You can disconnect it later in your BladeCP account, under [Connected apps](https://secure.bladecp.com/account/applications). With a key, the read-only account tools work right away. To create the key and expose it as `BLADECP_API_KEY`, follow [API key](../README.md#api-key) in the README.
 
-The `bladecp-migrate` skill runs the BladeCP CLI with `npx @bladecp/cli`, so the machine needs Node.js 20 or later. The CLI signs in on its own with `bladecp login`.
+The `bladecp-migrate` skill runs the BladeCP CLI with `npx @bladecp/cli@0.4.3`, so the machine needs Node.js 20 or later. The CLI signs in on its own with `bladecp login`.
 
 ## Claude Code
 

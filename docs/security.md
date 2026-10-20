@@ -6,11 +6,12 @@ This page describes what the BladeCP Agent Skills let an agent do, how your API 
 
 | Capability | How | Who decides |
 | --- | --- | --- |
-| Read the BladeCP Developers documentation and product guidance | MCP tools `search_docs`, `get_doc_page`, `list_doc_pages`, `recommend_plan` and `explain_migration`, or the `.md` pages | The agent, without a key |
+| Read the BladeCP Developers documentation and product guidance | MCP tools `search_docs`, `get_doc_page`, `list_doc_pages`, `recommend_plan`, `explain_migration` and `explain_server_closing`, or the `.md` pages | The agent, without a key |
 | Read your account, servers, usage, domains and migrations | The read-only MCP account tools | The agent, after you sign in with BladeCP or with your key |
 | Start a migration and upload a cPanel backup | The BladeCP CLI (`bladecp migrate`) | You ask for it |
 | Approve, cancel or retry a migration | The BladeCP CLI or the Hub | Only you, with an explicit instruction for that migration |
 | Add or remove a domain, install an app, update WordPress | The BladeCP CLI (`bladecp domains`, `bladecp apps`, `bladecp wordpress`) | Only you, with an explicit instruction for that server |
+| Cancel or delete your own server | Not through the skills: you ask for it in the BladeCP Hub, on the page of the server, and the agent explains how with `explain_server_closing` | Only you, in the Hub |
 | Create, change, suspend, cancel, delete or terminate a customer's service; manage webhooks; act on partner migrations | The BladeCP CLI partner commands (`bladecp partner`), with a partner key | Only you, with an explicit instruction for that item |
 | Call any other Customer API route | The BladeCP CLI (`bladecp api`) | Reads freely; changes only on your instruction |
 
