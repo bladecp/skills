@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-0.2.0-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="Version 0.2.0"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-0.2.1-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="Version 0.2.1"></a>
   <a href="#installation"><img src="https://img.shields.io/badge/agents-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20Cursor%20%C2%B7%20Antigravity%20%C2%B7%20OpenCode-6366f1?style=flat-square&amp;labelColor=1e1b4b" alt="Agents: Claude Code, Codex, Cursor, Antigravity and OpenCode"></a>
   <a href="#skills"><img src="https://img.shields.io/badge/skills-4-7c3aed?style=flat-square&amp;labelColor=1e1b4b" alt="4 skills"></a><br>
   <a href="#mcp"><img src="https://img.shields.io/badge/MCP-13%20read--only%20tools-4f46e5?style=flat-square&amp;labelColor=1e1b4b" alt="BladeCP MCP with 13 read-only tools"></a>
-  <a href="#quality"><img src="https://img.shields.io/badge/release%20checks-38%20passing-8b5cf6?style=flat-square&amp;labelColor=1e1b4b" alt="38 release checks passing for 0.2.0"></a>
+  <a href="#quality"><img src="https://img.shields.io/badge/release%20checks-38%20passing-8b5cf6?style=flat-square&amp;labelColor=1e1b4b" alt="38 release checks passing for 0.2.1"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-4338ca?style=flat-square&amp;labelColor=1e1b4b" alt="MIT license"></a>
   <a href="https://github.com/bladecp/skills/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/bladecp/skills/ci.yml?branch=main&amp;style=flat-square&amp;labelColor=1e1b4b&amp;label=public%20CI" alt="Public CI status"></a>
 </p>
@@ -23,9 +23,9 @@
 <p align="center">
   <a href="#installation"><strong>Install</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/bladecp/skills/releases/tag/v0.2.0">Release notes</a>
+  <a href="https://github.com/bladecp/skills/releases/tag/v0.2.1">Release notes</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/bladecp/skills/releases/download/v0.2.0/SHA256SUMS">SHA-256 checksum</a>
+  <a href="https://github.com/bladecp/skills/releases/download/v0.2.1/SHA256SUMS">SHA-256 checksum</a>
 </p>
 
 <p align="center">
@@ -283,12 +283,12 @@ Read [docs/security.md](docs/security.md) for the full model. To report a vulner
 
 ## Quality and validation
 
-Release `0.2.0` was validated by the maintainers before publication:
+Release `0.2.1` was validated by the maintainers before publication:
 
 - **38 release checks** for the release tooling: deterministic archive, closed file list, leak and link gates, and the safety locks of the publication step.
 - **Contract checks** on every skill and README: each MCP tool and its inputs, each BladeCP CLI command and flag, and each documentation page must exist in the current BladeCP contracts.
 - **Client validation** with `claude plugin validate --strict` and `agy plugin validate`, and `plugin.json` and `mcp.json` against the [Agent Plugins](https://agent-plugins.org) schemas.
-- **Installation from the release archive** in Claude Code, Codex, Antigravity CLI and OpenCode, and the production MCP answering the documentation and public tools without a key and asking for sign-in on the account tools.
+- **Installation from the release archive** in Claude Code, and six test rounds of the plugin in Claude Code against the production MCP and BladeCP CLI: the public tools without a key, the sign-in, every skill and the disconnection of the app.
 
 This repository includes the public structure and hygiene gate (`scripts/check-public-tree.sh`). The [public CI](https://github.com/bladecp/skills/actions/workflows/ci.yml) runs it on every change, together with the schema validation.
 

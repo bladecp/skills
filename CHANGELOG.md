@@ -2,6 +2,28 @@
 
 All notable changes to BladeCP Agent Skills are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [0.2.1] - 2026-10-20
+
+Fixes from six test rounds of the plugin in Claude Code: the skills sign in first, answer from BladeCP data and stop guessing.
+
+### Changed
+
+- Access starts with the BladeCP sign-in of the MCP, with an API key as the alternative; in Cursor, the Add to Cursor button comes first.
+- The skills run the installed `bladecp` and fall back to `npx` only when it is missing.
+- The WordPress commands on the user's own server no longer ask for `--external-id`; only a partner key adds it (BladeCP CLI 0.4.1 or later).
+- The base skill names the whole product line: Stack Container, Edge Cloud, Hyper Cloud, Quantum Steel and Vibe.
+
+### Fixed
+
+- Counts come from the tools: `list_servers` hides deleted servers and gives a `summary`, a count of a subset takes only the rows that match, and CLI counts come from `jq`.
+- A status is not usage, a missing measurement covers only the servers queried, missing plan limits are not equal limits, and a related event is not a cause.
+- Identifiers stay whole, and answers follow the user's language, also passed to the tools as `locale`.
+- Where email goes after pointing the domain follows the MX records, with the BladeCP nameservers or with only an A record.
+- What a migration brings is described as the docs say: MySQL and MariaDB databases (PostgreSQL coming soon), and the latest changes since the backup brought at approval.
+- A blocked command no longer stops the flow or turns into a request to lift the agent's permissions, and a blocked `--help` leads to the command itself.
+- After the user disconnects the app, the agent says so instead of switching on its own to the CLI's separate sign-in.
+- To say what a tool returns, the agent calls it; for partner data, it runs the partner command and relays the real result.
+
 ## [0.2.0] - 2026-10-19
 
 The skills now cover the whole Customer API through the BladeCP CLI 0.4.0, and the BladeCP MCP can be used by signing in with BladeCP, without a key.

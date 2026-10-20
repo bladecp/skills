@@ -1,6 +1,6 @@
 ---
 name: bladecp-partner
-description: Operate BladeCP as a partner with the bladecp partner commands of the BladeCP CLI. Use when the user is a BladeCP partner (reseller) or mentions a partner key, partner plans, locations, configurable options or branding, the servers of their customers (create, change plan or options, suspend, unsuspend, cancel, delete, open the customer panel), BladeCP Vibe accounts, marketplace sales, commissions, statements or base server invoices, webhook endpoints, signing secrets or deliveries, or Fast Deploy requests made through BladeCP for WHMCS or the BladeCP cPanel Migrator and their billing queue. Covers checking that the key is a partner key, every partner command with --json and real examples, reading before writing, and the safety rules for changes, one-time sign-in links and webhook secrets. Load the bladecp skill first.
+description: Operate BladeCP as a partner with the bladecp partner commands of the BladeCP CLI. Use when the user is a BladeCP partner (reseller), sells hosting through WHMCS, asks about the BladeCP WHMCS module (BladeCP for WHMCS) or partner provisioning, or mentions a partner key, partner plans, locations, configurable options or branding, the servers of their customers (create, change plan or options, suspend, unsuspend, cancel, delete, open the customer panel), BladeCP Vibe accounts, marketplace sales, commissions, statements or base server invoices, webhook endpoints, signing secrets or deliveries, or Fast Deploy requests made through BladeCP for WHMCS or the BladeCP cPanel Migrator and their billing queue. Covers checking that the key is a partner key, every partner command with --json and real examples, reading before writing, and the safety rules for changes, one-time sign-in links and webhook secrets. Load the bladecp skill first.
 ---
 
 # Operate BladeCP as a partner
@@ -11,6 +11,7 @@ Load the `bladecp` skill first for keys, the CLI output, exit codes and the gene
 
 BladeCP partners resell BladeCP: they sell servers and BladeCP Vibe accounts to their own customers, usually through BladeCP for WHMCS (https://developers.bladecp.com/whmcs.md), and move cPanel accounts with the BladeCP cPanel Migrator (https://developers.bladecp.com/cpanel-migrator.md). The `bladecp partner` commands of the BladeCP CLI (0.4.0 or later) do from the terminal what those tools do: catalog, customers' servers, Vibe accounts, marketplace, webhooks and partner migrations.
 
+- **Installing or configuring BladeCP for WHMCS:** answer from the docs. Search with `search_docs` (for example "WHMCS module"), then read the pages with `get_doc_page`, starting at `whmcs`. Never guess a module setting.
 - A customer working on their own servers, domains, apps or WordPress: load `bladecp-servers`.
 - A customer migrating their own cPanel backup: load `bladecp-migrate`.
 
@@ -22,7 +23,8 @@ bladecp whoami --json
 
 The key is a partner key when `data.scopes` includes `partner:read`. Then:
 
-- **Not a partner key.** `bladecp login` saves a personal key with the four personal scopes, and every partner command stops with `partner_only` (exit 4). Partner keys are created in the Hub, in the partner area, under API keys (https://developers.bladecp.com/getting-started/api-keys.md). The user sets `BLADECP_API_KEY` to the partner key in the environment where the agent starts (it takes the place of the saved sign-in), or runs `bladecp login --token -` in their own terminal. Never ask for the key in the chat.
+- **Not a partner key.** `bladecp login` saves a personal key with the four personal scopes, and the BladeCP sign-in of the MCP only reads the account, so every partner command stops with `partner_only` (exit 4). Partner keys are created in the Hub, in the partner area, under API keys (https://developers.bladecp.com/getting-started/api-keys.md). The user sets `BLADECP_API_KEY` to the partner key in the environment where the agent starts (it takes the place of the saved sign-in), or runs `bladecp login --token -` in their own terminal. Never ask for the key in the chat.
+- **Run it, do not predict it.** When the user asks for partner data, run the partner command (for example `bladecp partner plans --json`) and relay its real result or error, instead of predicting `partner_only` from `whoami`.
 - **`insufficient_scope` (exit 4) on one command.** The partner key lacks the scope of that action (for example lifecycle, panel sign-in, webhooks or Vibe). The user creates a key with that scope. Do not try another route for the same action.
 - **`data.source`** tells whether the key came from the environment or from the saved sign-in.
 

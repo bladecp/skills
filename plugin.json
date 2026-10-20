@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "bladecp",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "description": "BladeCP skills and MCP server for AI agents: migrate cPanel sites, manage servers, domains, apps and WordPress with the BladeCP CLI, operate your customers' services as a BladeCP partner, and read the BladeCP Developers documentation.",
   "author": {
